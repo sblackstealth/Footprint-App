@@ -1,6 +1,6 @@
 # From https://medium.com/better-programming/how-to-setup-continuous-integration-ci-with-react-circleci-and-github-e0efd5040b03
-#orbs:
-#  react: "thefrontside/react@dev:alpha"
+orbs:
+  react: "thefrontside/react@dev:alpha"
 version: 2.1
 workflows:
   push:
