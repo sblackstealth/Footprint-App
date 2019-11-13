@@ -16,3 +16,11 @@ For the data visualizations to work, you must:
     ```
     brew services start grafana
     ```
+## Continuous integration
+
+DeepScan will analyze your pull requests for code quality and ESLint warnings.
+
+To save a CI run, you can run the linter locally with:
+```
+npm run lint
+```
