@@ -1,0 +1,38 @@
+.Slider {
+  width: 100%;
+  margin: 10px 0 40px 0;
+}
+
+.Slider .rc-slider-rail {
+  height: 20px;
+  border-radius: 10px;
+}
+
+.Slider .rc-slider-track {
+  background-image: linear-gradient(to right, rgb(143, 188, 143), rgb(60, 179, 113));
+  height: 20px;
+  border-radius: 10px;
+}
+
+.Slider .rc-slider-handle,
+.Slider .rc-slider-handle:active,
+.Slider .rc-slider-handle:focus,
+.Slider .rc-slider-handle:hover {
+  background-color: mediumseagreen;
+  border: 2px solid mediumseagreen;
+  height: 30px;
+  width: 30px;
+}
+
+.Slider .rc-slider-step {
+  height: 20px;
+}
+
+.Slider .rc-slider-with-marks {
+  height: 20px;
+}
+
+.Slider .rc-slider-mark-text {
+  top: 15px;
+  font-size: 16px;
+}
