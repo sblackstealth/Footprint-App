@@ -20,4 +20,6 @@ export default [
   'Whether you live in a house or an apartment, planting some greens is a quick and easy way to reduce your carbon footprint',
 
   'Storing your data on the cloud uses more energy than storing it on your computer',
+
+  'The average American\'s carbon footprint per person in 2014 was 21.5 metric tons of CO2',
 ]
