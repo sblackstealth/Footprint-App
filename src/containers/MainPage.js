@@ -16,17 +16,17 @@ class MainPage extends Component {
     this.offsetHandler = this.offsetHandler.bind(this);
   }
 
-  // Checks to see if slider amount is increased. If so, cloverly api is called.
+  // Checks to see if slider amount is increased. If so, cloverly handler is called.
   offsetHandler(amount) {
     console.log(amount)
-    const { carbonAmount, offsetPercentage } = this.state;
+    const { offsetPercentage } = this.state;
 
     if (amount <= offsetPercentage) {
       this.setState({ offsetPercentage });
     }
     else {
-      this.setState({ offsetPercentage: amount });
       this.cloverlyHandler(amount);
+      this.setState({ offsetPercentage: amount });
     }
   }
 
@@ -42,7 +42,6 @@ class MainPage extends Component {
           'Authorization': 'Bearer public_key:47800ea0ee541b4c'
         }
       })
-
       await console.log('cloverly', response);
     } catch (error) {
       console.log(error);
@@ -50,8 +49,7 @@ class MainPage extends Component {
   }
 
   render() {
-    console.log('rerender');
-    const { carbonAmount, offsetPercentage } = this.state;
+    const { offsetPercentage } = this.state;
     return (
       <div className="Main">
         <div className="Main__graphs">
