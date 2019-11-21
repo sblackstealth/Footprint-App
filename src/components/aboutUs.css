@@ -1,0 +1,45 @@
+.About__aboutus {
+  height: 90vh;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url('https://images.unsplash.com/photo-1502252430442-aac78f397426?ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+}
+
+.About__summary {
+  width: 80%;
+  height: 100%;
+}
+
+.About__facts {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, .6), rgba(0, 0, 0, .6));
+  width: 20%;
+  height: 100%;
+}
+
+.About__team {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  padding: 30px 0;
+}
+
+.About__members {
+  width: 1024px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.About__member {
+  width: 100px;
+  height: 300px;
+  width: 300px;
+  margin: 20px 0;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #efefef;
+}
