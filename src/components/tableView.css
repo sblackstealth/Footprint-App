@@ -1,0 +1,9 @@
+.ReactTable .rt-thead {
+  padding: 10px;
+  color: rgb(33, 59, 59);
+  background-color: rgb(246, 233, 225);
+}
+
+.ReactTable .rt-tr {
+  color: rgb(33, 59, 59);
+}
