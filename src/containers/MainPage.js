@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Slider from '../components/Slider';
+import Chart from '../components/chart';
 
 import './mainPage.css';
 
@@ -53,7 +54,7 @@ class MainPage extends Component {
     return (
       <div className="Main">
         <div className="Main__graphs">
-          <div className="Main__graph">graph will go here</div>
+          <Chart />
           <div className="Main__graph">graph will go here</div>
           <div className="Main__graph">graph will go here</div>
         </div>
