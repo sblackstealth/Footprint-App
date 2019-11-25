@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Slider from '../components/Slider';
 import TableView from '../components/tableView';
+import Chart from '../components/Chart';
 
 import './mainPage.css';
 
@@ -55,7 +56,7 @@ class MainPage extends Component {
       <div className="Main">
         <div className="Main__graphs">
           <TableView />
-          <div className="Main__graph">graph will go here</div>
+          <Chart />
           <div className="Main__graph">graph will go here</div>
         </div>
         <div className="Main__carbon-info">
