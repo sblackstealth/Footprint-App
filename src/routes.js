@@ -1,11 +1,9 @@
 import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 
-
 import MainPage from './containers/MainPage';
 import AboutUs from './components/AboutUs';
 import TableView from './components/tableView';
-
 
 const Routes = () => (
   <HashRouter>

@@ -1,10 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import ReactTable from "react-table";
-import "react-table/react-table.css";
 
-import "./tableView.css";
 import data from "../data";
+
+import "react-table/react-table.css";
+import "./tableView.css";
 
 function TableView() {
   const columns = [

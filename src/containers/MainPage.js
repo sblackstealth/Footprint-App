@@ -19,7 +19,6 @@ class MainPage extends Component {
 
   // Checks to see if slider amount is increased. If so, cloverly handler is called.
   offsetHandler(amount) {
-    console.log(amount);
     const { offsetPercentage } = this.state;
 
     if (amount <= offsetPercentage) {
@@ -42,8 +41,10 @@ class MainPage extends Component {
           Authorization: 'Bearer public_key:47800ea0ee541b4c',
         },
       });
-      await console.log('cloverly', response);
+      // eslint-disable-next-line no-console
+      console.log('cloverly', response);
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.log(error);
     }
   }
