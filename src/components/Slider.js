@@ -22,7 +22,7 @@ const Slider = ({offsetPercentage, offsetHandler}) => {
 
 Slider.propTypes = {
   offsetPercentage: PropTypes.number,
-  offsetHandler: PropTypes.number
+  offsetHandler: PropTypes.func
 };
 
 export default Slider;

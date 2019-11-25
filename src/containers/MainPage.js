@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import CarbonFacts from './CarbonFacts';
 import Slider from '../components/Slider';
 import TableView from '../components/tableView';
 import Chart from '../components/Chart';
@@ -85,7 +86,8 @@ class MainPage extends Component {
             </div>
             <div className="Main__did-you-know">
               <h3>Did you now?</h3>
-              <div className="Main__carbon-facts">
+              <CarbonFacts />
+              {/* <div className="Main__carbon-facts">
                 <p className="Main__fact">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
@@ -96,7 +98,7 @@ class MainPage extends Component {
                 <p className="Main__fact">
                   odio eveniet, corporis totam dolore, quis sed autem?
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
