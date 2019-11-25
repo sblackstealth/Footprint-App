@@ -26,13 +26,13 @@ class Chart extends Component {
 
   render() {
     return (
-      <div style={{ position: 'relative', width: '500px', height: '550px'}}>
-          <Bar
-            options={{
-              responsive: true
-            }}
-            data={this.state.data}
-          />
+      <div style={{ position: 'relative', width: '500px', height: '550px' }}>
+        <Bar
+          options={{
+            responsive: true
+          }}
+          data={this.state.data}
+        />
       </div>
     );
   }
