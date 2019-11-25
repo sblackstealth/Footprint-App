@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Bar } from 'react-chartjs-2';
 
-class chart extends Component {
+class Chart extends Component {
   constructor(props) {
     super(props);
 
@@ -38,4 +38,4 @@ class chart extends Component {
   }
 }
 
-export default chart;
+export default Chart;

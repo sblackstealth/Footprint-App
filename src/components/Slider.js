@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import * as RCSlider from 'rc-slider/lib/Slider';
 
 import './slider.css';
@@ -17,6 +18,11 @@ const Slider = ({offsetPercentage, offsetHandler}) => {
       />
     </div>
   );
+};
+
+Slider.propTypes = {
+  offsetPercentage: PropTypes.number,
+  offsetHandler: PropTypes.func
 };
 
 export default Slider;

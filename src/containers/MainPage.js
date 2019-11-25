@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import CarbonFacts from './CarbonFacts';
 import Slider from '../components/Slider';
 import TableView from '../components/tableView';
+import Chart from '../components/Chart';
 
 import './mainPage.css';
 
@@ -19,7 +21,6 @@ class MainPage extends Component {
 
   // Checks to see if slider amount is increased. If so, cloverly handler is called.
   offsetHandler(amount) {
-    console.log(amount);
     const { offsetPercentage } = this.state;
 
     if (amount <= offsetPercentage) {
@@ -42,8 +43,10 @@ class MainPage extends Component {
           Authorization: 'Bearer public_key:47800ea0ee541b4c',
         },
       });
-      await console.log('cloverly', response);
+      // eslint-disable-next-line no-console
+      console.log('cloverly', response);
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.log(error);
     }
   }
@@ -54,7 +57,7 @@ class MainPage extends Component {
       <div className="Main">
         <div className="Main__graphs">
           <TableView />
-          <div className="Main__graph">graph will go here</div>
+          <Chart />
           <div className="Main__graph">graph will go here</div>
         </div>
         <div className="Main__carbon-info">
@@ -83,7 +86,8 @@ class MainPage extends Component {
             </div>
             <div className="Main__did-you-know">
               <h3>Did you now?</h3>
-              <div className="Main__carbon-facts">
+              <CarbonFacts />
+              {/* <div className="Main__carbon-facts">
                 <p className="Main__fact">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
@@ -94,7 +98,7 @@ class MainPage extends Component {
                 <p className="Main__fact">
                   odio eveniet, corporis totam dolore, quis sed autem?
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
