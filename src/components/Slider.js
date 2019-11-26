@@ -11,7 +11,7 @@ const Slider = ({offsetPercentage, offsetHandler}) => {
       <RCSlider
         defaultValue={offsetPercentage}
         min={0}
-        max={250}
+        max={200}
         marks={{ [offsetPercentage]: offsetPercentage }}
         step={5}
         onAfterChange={offsetHandler}
