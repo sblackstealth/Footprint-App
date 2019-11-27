@@ -3,7 +3,7 @@ import axios from 'axios';
 import CarbonFacts from './CarbonFacts';
 import Slider from '../components/Slider';
 import TableView from '../components/tableView';
-import Chart from '../components/Chart';
+import DataChart from '../components/DataChart';
 
 import './mainPage.css';
 
@@ -57,8 +57,7 @@ class MainPage extends Component {
       <div className="Main">
         <div className="Main__graphs">
           <TableView />
-          <Chart />
-          <div className="Main__graph">graph will go here</div>
+          <DataChart />
         </div>
         <div className="Main__carbon-info">
           <div className="Main__months">
