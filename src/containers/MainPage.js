@@ -4,6 +4,7 @@ import CarbonFacts from './CarbonFacts';
 import Slider from '../components/Slider';
 import TableView from '../components/tableView';
 import DataChart from '../components/DataChart';
+import Modal from '../components/Modal';
 
 import './mainPage.css';
 
@@ -14,6 +15,8 @@ class MainPage extends Component {
     this.state = {
       carbonAmount: 15,
       offsetPercentage: 100,
+      isModalOpen: false,
+      offsetData: {},
     };
 
     this.offsetHandler = this.offsetHandler.bind(this);
@@ -26,8 +29,9 @@ class MainPage extends Component {
     if (amount <= offsetPercentage) {
       this.setState({ offsetPercentage });
     } else {
-      this.cloverlyHandler(amount);
       this.setState({ offsetPercentage: amount });
+      this.cloverlyHandler(amount);
+      this.setState({ isModalOpen: !this.state.isModalOpen});
     }
   }
 
@@ -36,15 +40,15 @@ class MainPage extends Component {
     try {
       const response = await axios({
         method: 'post',
-        url: 'https://api.cloverly.com/2019-03-beta/purchases/carbon',
-        data: JSON.stringify({ weight: { value: amount, units: 'kg' } }),
+        url: 'https://api.cloverly.com/2019-03-beta/purchases/electricity',
+        data: JSON.stringify({ energy: { value: 100800, units: 'kwh' } }),
         headers: {
           'Content-type': 'application/json',
           Authorization: 'Bearer public_key:47800ea0ee541b4c',
         },
       });
       // eslint-disable-next-line no-console
-      console.log('cloverly', response);
+      this.setState({ offsetData: response.data})
     } catch (error) {
       // eslint-disable-next-line no-console
       console.log(error);
@@ -86,6 +90,7 @@ class MainPage extends Component {
             <div className="Main__did-you-know">
               <h3>Did you now?</h3>
               <CarbonFacts />
+              <Modal isModalOpen={this.state.isModalOpen} offsetData={this.state.offsetData} />
             </div>
           </div>
         </div>
