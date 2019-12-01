@@ -11,6 +11,7 @@ class Modal extends Component {
   }
 
   render() {
+    // eslint-disable-next-line no-console
     console.log(this.props.offsetData);
     if (this.props.offsetData.offset) {
       const { offset, rec_cost_in_usd_cents, transaction_cost_in_usd_cents, total_cost_in_usd_cents } = this.props.offsetData;

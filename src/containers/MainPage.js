@@ -37,7 +37,7 @@ class MainPage extends Component {
   }
 
   // Passes an amount in weight to the cloverly api
-  async cloverlyHandler(amount) {
+  async cloverlyHandler() {
     try {
       const response = await axios({
         method: 'post',
