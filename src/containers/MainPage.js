@@ -31,7 +31,7 @@ class MainPage extends Component {
     } else {
       this.setState({ offsetPercentage: amount });
       this.cloverlyHandler(amount);
-      this.setState({ isModalOpen: !this.state.isModalOpen});
+      this.setState({ isModalOpen: !this.state.isModalOpen });
     }
   }
 
@@ -48,7 +48,7 @@ class MainPage extends Component {
         },
       });
       // eslint-disable-next-line no-console
-      this.setState({ offsetData: response.data})
+      this.setState({ offsetData: response.data })
     } catch (error) {
       // eslint-disable-next-line no-console
       console.log(error);

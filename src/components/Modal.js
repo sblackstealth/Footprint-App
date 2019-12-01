@@ -12,7 +12,7 @@ class Modal extends Component {
 
   render() {
     console.log(this.props.offsetData);
-    if(this.props.offsetData.offset) {
+    if (this.props.offsetData.offset) {
       const { offset, rec_cost_in_usd_cents, transaction_cost_in_usd_cents, total_cost_in_usd_cents } = this.props.offsetData;
 
       return (
@@ -45,7 +45,6 @@ class Modal extends Component {
 
             <p>offset cost: {convertUSD(rec_cost_in_usd_cents)}</p>
             <p>transaction cost: {convertUSD(transaction_cost_in_usd_cents)}</p>
-            {/* <p>total: {convertUSD(total_cost_in_usd_cents)}</p> */}
             <div className="Modal__btns">
               <button className="Modal__purchase">Purchase offset: {convertUSD(total_cost_in_usd_cents)}</button>
               <button className="Modal__cancel">Cancel</button>
