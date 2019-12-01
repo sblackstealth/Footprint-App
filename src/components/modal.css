@@ -1,0 +1,89 @@
+.Modal {
+  position: absolute;
+  top: 100px;
+  left: 150px;
+  right: 150px;
+  bottom: 100px;
+  background-color: white;
+  outline: transparent;
+  border-radius: 15px;
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(196, 188, 82, 0.337);
+}
+
+.Modal h2 {
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.Modal h3 {
+  font-size: 1.5rem;
+}
+
+.Modal__important-info {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.Modal__close-div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Modal__close {
+  font-size: 32px;
+  cursor: pointer;
+  transition: transform .5s ease;
+}
+
+.Modal__close:hover {
+  transform: scale(1.2);
+}
+
+.Modal__details {
+  font-size: 1.1rem;
+}
+
+.Modal__btns {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Modal__btns .Modal__cancel,
+.Modal__btns .Modal__purchase {
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.2rem;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: .5s ease;
+}
+
+.Modal__cancel {
+  background-color: rgb(179, 60, 68);
+}
+
+.Modal__cancel:hover {
+  background-color: rgb(126, 43, 48);
+}
+
+.Modal__purchase {
+  background-color: rgb(60, 179, 113);
+}
+
+.Modal__purchase:hover {
+  background-color: rgb(39, 116, 74);
+}
