@@ -65,15 +65,25 @@
   color: white;
   padding: 10px;
   border-radius: 5px;
+  border: none;
   font-size: 1.2rem;
   margin: 0 10px;
   cursor: pointer;
+  transition: .5s ease;
 }
 
 .Modal__cancel {
   background-color: rgb(179, 60, 68);
 }
 
+.Modal__cancel:hover {
+  background-color: rgb(126, 43, 48);
+}
+
 .Modal__purchase {
   background-color: rgb(60, 179, 113);
+}
+
+.Modal__purchase:hover {
+  background-color: rgb(39, 116, 74);
 }
