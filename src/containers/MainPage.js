@@ -20,6 +20,7 @@ class MainPage extends Component {
     };
 
     this.offsetHandler = this.offsetHandler.bind(this);
+    this.openModal = this.openModal.bind(this);
   }
 
   // Checks to see if slider amount is increased. If so, cloverly handler is called.
@@ -31,7 +32,7 @@ class MainPage extends Component {
     } else {
       this.setState({ offsetPercentage: amount });
       this.cloverlyHandler(amount);
-      this.setState({ isModalOpen: !this.state.isModalOpen });
+      this.openModal()
     }
   }
 
@@ -53,6 +54,10 @@ class MainPage extends Component {
       // eslint-disable-next-line no-console
       console.log(error);
     }
+  }
+
+  openModal() {
+    this.setState({ isModalOpen: !this.state.isModalOpen });
   }
 
   render() {
@@ -90,7 +95,11 @@ class MainPage extends Component {
             <div className="Main__did-you-know">
               <h3>Did you now?</h3>
               <CarbonFacts />
-              <Modal isModalOpen={this.state.isModalOpen} offsetData={this.state.offsetData} />
+              <Modal
+                isModalOpen={this.state.isModalOpen}
+                offsetData={this.state.offsetData}
+                openModal={this.openModal}
+              />
             </div>
           </div>
         </div>

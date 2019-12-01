@@ -27,7 +27,7 @@ class Modal extends Component {
             overlayClassName="Overlay"
           >
             <div className="Modal__close-div">
-              <i onClick={this.openModal} className="lar la-times-circle Modal__close"></i>
+              <i onClick={this.props.openModal} className="lar la-times-circle Modal__close"></i>
             </div>
             <h2>Looks like you want to offset your carbon emissions, great! Below are the details of where your support is going.</h2>
 
@@ -47,7 +47,7 @@ class Modal extends Component {
             <p>transaction cost: {convertUSD(transaction_cost_in_usd_cents)}</p>
             <div className="Modal__btns">
               <button className="Modal__purchase">Purchase offset: {convertUSD(total_cost_in_usd_cents)}</button>
-              <button className="Modal__cancel">Cancel</button>
+              <button className="Modal__cancel" onClick={this.props.openModal}>Cancel</button>
             </div>
           </ReactModal>
         </div>
@@ -60,6 +60,7 @@ class Modal extends Component {
 Modal.propTypes = {
   isModalOpen: PropTypes.bool.isRequired,
   offsetData: PropTypes.object.isRequired,
+  openModal: PropTypes.func.isRequired,
 }
 
 
