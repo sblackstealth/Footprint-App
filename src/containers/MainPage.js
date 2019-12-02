@@ -5,8 +5,10 @@ import Slider from '../components/Slider';
 import TableView from '../components/tableView';
 import DataChart from '../components/DataChart';
 import Modal from '../components/Modal';
+import MonthChart from '../components/MonthChart';
 
 import './mainPage.css';
+
 
 class MainPage extends Component {
   constructor(props) {
@@ -17,10 +19,25 @@ class MainPage extends Component {
       offsetPercentage: 100,
       isModalOpen: false,
       offsetData: {},
+      monthsChecked: [
+        {
+          id:'April',
+          checked: true,
+        },
+        {
+          id:'October',
+          checked: false,
+        },
+        {
+          id:'June',
+          checked: false,
+        }
+      ],
     };
 
     this.offsetHandler = this.offsetHandler.bind(this);
     this.openModal = this.openModal.bind(this);
+    this.isMonthChecked = this.isMonthChecked.bind(this);
   }
 
   // Checks to see if slider amount is increased. If so, cloverly handler is called.
@@ -59,6 +76,11 @@ class MainPage extends Component {
   openModal() {
     this.setState({ isModalOpen: !this.state.isModalOpen });
   }
+  
+  isMonthChecked (id) {
+    const updatedMonths = this.state.monthsChecked.map(month => month.id === id ? { id, checked: !month.checked } : month)
+    this.setState({ monthsChecked: updatedMonths })
+  }
 
   render() {
     const { offsetPercentage } = this.state;
@@ -71,18 +93,7 @@ class MainPage extends Component {
         <div className="Main__carbon-info">
           <div className="Main__months">
             <h3>Months Carbon Positive</h3>
-            <div className="Main__month-chart">
-              {['January', 'February', 'May', 'June', 'July', 'August'].map(
-                month => (
-                  <div className="Main__month" key={month}>
-                    <div className="radio">
-                      <input type="radio" />
-                    </div>
-                    <p>{month}</p>
-                  </div>
-                )
-              )}
-            </div>
+            <MonthChart monthsChecked={this.state.monthsChecked} isMonthChecked={this.isMonthChecked} />
           </div>
           <div className="Main__carbon-offsets">
             <div className="Main__slider">
