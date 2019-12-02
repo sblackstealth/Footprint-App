@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './monthchart.css';
 
 const MonthChart = ({monthsChecked, isMonthChecked}) => {
@@ -17,6 +18,11 @@ const MonthChart = ({monthsChecked, isMonthChecked}) => {
       )}
     </div>
   );
+};
+
+MonthChart.propTypes = {
+  monthsChecked: PropTypes.array.isRequired,
+  isMonthChecked: PropTypes.func.isRequired 
 };
 
 export default MonthChart;

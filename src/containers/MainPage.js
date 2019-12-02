@@ -83,7 +83,6 @@ class MainPage extends Component {
   }
 
   render() {
-    console.log('the state:', this.state); 
     const { offsetPercentage } = this.state;
     return (
       <div className="Main">
