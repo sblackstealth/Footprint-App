@@ -5,16 +5,17 @@ import * as RCSlider from 'rc-slider/lib/Slider';
 import './slider.css';
 import 'rc-slider/assets/index.css';
 
-const Slider = ({offsetPercentage, offsetHandler}) => {
+const Slider = ({offsetPercentage, sliderOnAfterChange, sliderOnChange}) => {
   return (
     <div className="Slider">
       <RCSlider
         defaultValue={offsetPercentage}
         min={0}
         max={200}
-        marks={{ [offsetPercentage]: offsetPercentage }}
+        marks={{ [offsetPercentage]: offsetPercentage + '%' }}
         step={5}
-        onAfterChange={offsetHandler}
+        onAfterChange={sliderOnAfterChange}
+        onChange={sliderOnChange}
       />
     </div>
   );

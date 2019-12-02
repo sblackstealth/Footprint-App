@@ -35,22 +35,18 @@ class MainPage extends Component {
       ],
     };
 
-    this.offsetHandler = this.offsetHandler.bind(this);
     this.openModal = this.openModal.bind(this);
     this.isMonthChecked = this.isMonthChecked.bind(this);
   }
 
   // Checks to see if slider amount is increased. If so, cloverly handler is called.
-  offsetHandler(amount) {
-    const { offsetPercentage } = this.state;
+  sliderOnAfterChange = (amount) => {
+    this.cloverlyHandler(amount);
+    this.openModal()
+  }
 
-    if (amount <= offsetPercentage) {
-      this.setState({ offsetPercentage });
-    } else {
-      this.setState({ offsetPercentage: amount });
-      this.cloverlyHandler(amount);
-      this.openModal()
-    }
+  sliderOnChange = (amount) => {
+    this.setState({ offsetPercentage: amount });
   }
 
   // Passes an amount in weight to the cloverly api
@@ -76,13 +72,14 @@ class MainPage extends Component {
   openModal() {
     this.setState({ isModalOpen: !this.state.isModalOpen });
   }
-  
+
   isMonthChecked (id) {
     const updatedMonths = this.state.monthsChecked.map(month => month.id === id ? { id, checked: !month.checked } : month)
     this.setState({ monthsChecked: updatedMonths })
   }
 
   render() {
+    console.log(this.state)
     const { offsetPercentage } = this.state;
     return (
       <div className="Main">
@@ -100,7 +97,8 @@ class MainPage extends Component {
               <h3>Carbon Offset</h3>
               <Slider
                 offsetPercentage={offsetPercentage}
-                offsetHandler={this.offsetHandler}
+                sliderOnAfterChange={this.sliderOnAfterChange}
+                sliderOnChange={this.sliderOnChange}
               />
             </div>
             <div className="Main__did-you-know">
