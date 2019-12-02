@@ -1,6 +1,7 @@
 import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 
+import Navbar from './components/Navbar';
 import MainPage from './containers/MainPage';
 import AboutUs from './components/AboutUs';
 import TableView from './components/tableView';
@@ -8,6 +9,7 @@ import TableView from './components/tableView';
 const Routes = () => (
   <HashRouter>
     <>
+      <Route path="/" component={Navbar} />
       <Switch>
         <Route exact path="/" component={MainPage} />
         <Route exact path="/about" component={AboutUs} />
