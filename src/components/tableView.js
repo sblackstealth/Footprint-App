@@ -10,7 +10,8 @@ function TableView() {
   const columns = [
     {
       Header: "Month/Year",
-      accessor: "month"
+      accessor: "month",
+      style: { 'whiteSpace': 'unset' }
     },
     {
       Header: "Location",
@@ -27,11 +28,12 @@ function TableView() {
       Header: "Per-Server Watt Draw",
       accessor: "watt_hours",
       style: {
-        textAlign: "right"
+        textAlign: "right",
+        'whiteSpace': 'unset'
       }
     },
     {
-      Header: "Total Carbon Emissions(Mg)",
+      Header: "Total Carbon Emissions (Mg)",
       accessor: "carbon_emissions",
       style: {
         textAlign: "right"

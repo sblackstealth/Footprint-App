@@ -1,7 +1,15 @@
+.ReactTable {
+  font-size: 0.7em;
+}
+
 .ReactTable .rt-thead {
   padding: 10px;
   color: rgb(33, 59, 59);
   background-color: rgb(246, 233, 225);
+}
+
+.ReactTable .rt-th {
+  white-space: unset;
 }
 
 .ReactTable .rt-tr {
