@@ -46,7 +46,6 @@
   flex-direction: column;
   justify-content: space-around;
   width: 60%;
-  /* background-color: firebrick; */
   padding-right: 50px;
   border-right: 2px solid #efefef;
 }
@@ -82,7 +81,6 @@
 .Modal__offset {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   padding-left: 50px;
   text-align: right;
 }
