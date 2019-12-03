@@ -33,23 +33,28 @@ class Modal extends Component {
             <h2>Looks like you want to offset your carbon emissions, great! Below are the details of where your support is going.</h2>
 
             <h3>{offset.name}</h3>
-            <p>
-              This Project is located in
-              <span className="Modal__important-info">
-                {` ${offset.city}, ${offset.province}`}
-              </span>, and focuses on
-              <span className="Modal__important-info">
-                {` ${offset.offset_type}`}.
-                </span>
-            </p>
-            <p className="Modal__details">{offset.technical_details}</p>
-
-            <p>offset cost: {convertUSD(rec_cost_in_usd_cents)}</p>
-            <p>transaction cost: {convertUSD(transaction_cost_in_usd_cents)}</p>
-            <div className="Modal__btns">
-              <button className="Modal__purchase">Purchase offset: {convertUSD(total_cost_in_usd_cents)}</button>
-              <button className="Modal__cancel" onClick={this.props.openModal}>Cancel</button>
+            <div className="Modal__project">
+              <div className="Modal__project-details">
+                <p className="Modal__para">
+                  This Project is located in
+                <span className="Modal__important-info">
+                    {` ${offset.city}, ${offset.province}`}
+                  </span>, and focuses on
+                <span className="Modal__important-info">
+                    {` ${offset.offset_type}`}.
+                  </span>
+                </p>
+                <p className="Modal__desc">{offset.technical_details}</p>
+              </div>
+              <div className="Modal__offset">
+                <p>offset cost: {convertUSD(rec_cost_in_usd_cents)}</p>
+                <p>fee: {convertUSD(transaction_cost_in_usd_cents)}</p>
+              </div>
             </div>
+                <div className="Modal__btns">
+                  <button className="Modal__purchase">Purchase offset: {convertUSD(total_cost_in_usd_cents)}</button>
+                  <button className="Modal__cancel" onClick={this.props.openModal}>Cancel</button>
+                </div>
           </ReactModal>
         </div>
       )
