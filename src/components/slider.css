@@ -36,3 +36,16 @@
   top: 15px;
   font-size: 16px;
 }
+
+.Slider__img {
+  position: relative;
+  top: -20px;
+  left: -30px;
+  height: 85px;
+  width: 85px;
+}
+
+.Slider__mark {
+  position: relative;
+  top: -65px;
+}

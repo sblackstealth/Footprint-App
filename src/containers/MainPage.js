@@ -41,8 +41,10 @@ class MainPage extends Component {
 
   // Checks to see if slider amount is increased. If so, cloverly handler is called.
   sliderOnAfterChange = (amount) => {
-    this.cloverlyHandler(amount);
-    this.openModal()
+    if (amount > 0) {
+      this.cloverlyHandler(amount);
+      this.openModal();
+    }
   }
 
   sliderOnChange = (amount) => {
@@ -79,7 +81,6 @@ class MainPage extends Component {
   }
 
   render() {
-    console.log(this.state)
     const { offsetPercentage } = this.state;
     return (
       <div className="Main">
@@ -95,6 +96,7 @@ class MainPage extends Component {
           <div className="Main__carbon-offsets">
             <div className="Main__slider">
               <h3>Carbon Offset</h3>
+              <br />
               <Slider
                 offsetPercentage={offsetPercentage}
                 sliderOnAfterChange={this.sliderOnAfterChange}
