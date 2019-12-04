@@ -102,8 +102,11 @@ class MainPage extends Component {
     return (
       <div className="Main">
         <div className="Main__graphs">
+        <h3 className="Main__stats">Carbon Statistics</h3>
+        <div className="Main__getitdone">
           <TableView tableData={this.state.data} />
           <DataChart chartData={this.state.data} />
+        </div>
         </div>
         <div className="Main__carbon-info">
           <div className="Main__months">

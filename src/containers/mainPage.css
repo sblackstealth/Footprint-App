@@ -7,13 +7,21 @@
 }
 
 .Main__graphs {
-  display: flex;
-  justify-content: space-between;
+  /* display: flex;
+  justify-content: space-between; */
   width: 80%;
   padding: 30px 30px;
   border-radius: 15px;
   background-color: white;
   border: 1px solid lightgray;
+}
+
+.Main__stats {
+  padding: 0 0 5px 0;
+}
+
+.Main__getitdone {
+  display: flex;
 }
 
 .Main__graph {
