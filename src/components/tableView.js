@@ -1,12 +1,12 @@
 import React from "react";
 import ReactTable from "react-table";
-
-import data from "../data";
+import PropTypes from 'prop-types';
+// import data from "../data";
 
 import "react-table/react-table.css";
 import "./tableView.css";
 
-function TableView() {
+function TableView({ tableData }) {
   const columns = [
     {
       Header: "Month/Year",
@@ -51,7 +51,7 @@ function TableView() {
   return (
     <ReactTable
       columns={columns}
-      data={data}
+      data={tableData}
       defaultPageSize={11}
       showPagination={false}
       noDataText={"Please wait for data..."}
@@ -59,5 +59,9 @@ function TableView() {
     />
   );
 }
+
+TableView.propTypes = {
+  tableData: PropTypes.array.isRequired
+};
 
 export default TableView;
