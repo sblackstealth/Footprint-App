@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import * as RCSlider from 'rc-slider/lib/Slider';
 import Handle from 'rc-slider/lib/Handle'
@@ -15,13 +15,20 @@ import cn200 from '../assets/cn200.png';
 import './slider.css';
 import 'rc-slider/assets/index.css';
 
-const Slider = ({offsetPercentage, sliderOnAfterChange, sliderOnChange}) => {
+const Slider = ({offsetPercentage, sliderOnAfterChange, sliderOnChange, currentMonth}) => {
+  // const [offsetPercentage, setOffsetPercentage] = useState(currentMonth.offset_amount === 0 ? 0 : currentMonth.carbon_emissions / currentMonth.offset_amount * 100);
   const badges = [null, cn25, cn50, cn75, cn100, cn125, cn150, cn175, cn200];
+  // const offsetPercentage = currentMonth.offset_amount === 0 ? 0 : currentMonth.carbon_emissions / currentMonth.offset_amount * 100;
   const badge = badges[Math.ceil(offsetPercentage / 25)];
   const mark = <p className='Slider__mark'>{offsetPercentage}%</p>
 
+  // const calculate = () => {
+  //   currentMonth.offset_amount === 0 ? 0 : currentMonth.carbon_emissions / currentMonth.offset_amount * 100
+  // }
+  console.log('o', offsetPercentage);
+
   return (
-    <div className="Slider">
+    <div className={`Slider ${offsetPercentage}`}>
       <RCSlider
         defaultValue={offsetPercentage}
         min={0}
@@ -50,6 +57,7 @@ Slider.propTypes = {
   offsetPercentage: PropTypes.number,
   sliderOnChange: PropTypes.func,
   sliderOnAfterChange: PropTypes.func,
+  currentMonth: PropTypes.number
 };
 
 export default Slider;

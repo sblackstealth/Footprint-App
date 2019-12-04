@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Bar } from 'react-chartjs-2';
+import PropTypes from 'prop-types';
+// import data from '../data';
 
 class DataChart extends Component {
   constructor(props) {
@@ -9,14 +11,14 @@ class DataChart extends Component {
         labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov'],
         datasets: [
           {
-            label: 'Carbon Emissions', 
+            label: 'Carbon Emissions',
             backgroundColor: '#233B3B',
-            data: [53.76,55.94, 54.91, 59.12, 52.22, 56.34, 55.55, 56.44, 54.75, 52.22, 25.72],
+            data: this.props.chartData.map(month => month.carbon_emissions),
           },
           {
-            label: 'Carbon Offsets', 
+            label: 'Carbon Offsets',
             backgroundColor: '#D18C29',
-            data: [53.76,55.94, 54.91, 59.12, 52.22, 56.34, 55.55, 112.88, 109.50, 0, 0],
+            data: this.props.chartData.map(month => month.offset_amount),
           }
         ]
       }
@@ -39,5 +41,9 @@ class DataChart extends Component {
     );
   }
 }
+
+DataChart.propTypes = {
+  chartData: PropTypes.array.isRequired
+};
 
 export default DataChart;

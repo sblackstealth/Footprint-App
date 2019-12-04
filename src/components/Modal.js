@@ -52,7 +52,7 @@ class Modal extends Component {
               </div>
             </div>
                 <div className="Modal__btns">
-                  <button className="Modal__purchase">Purchase offset: {convertUSD(total_cost_in_usd_cents)}</button>
+                  <button className="Modal__purchase" onClick={this.props.openModal}>Purchase offset: {convertUSD(total_cost_in_usd_cents)}</button>
                   <button className="Modal__cancel" onClick={this.props.openModal}>Cancel</button>
                 </div>
           </ReactModal>
