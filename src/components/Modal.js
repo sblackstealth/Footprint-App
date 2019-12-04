@@ -11,8 +11,6 @@ class Modal extends Component {
   }
 
   render() {
-    // eslint-disable-next-line no-console
-    console.log(this.props.offsetData);
     if (this.props.offsetData.offset) {
       const { offset, rec_cost_in_usd_cents, transaction_cost_in_usd_cents, total_cost_in_usd_cents } = this.props.offsetData;
 
@@ -52,7 +50,7 @@ class Modal extends Component {
               </div>
             </div>
                 <div className="Modal__btns">
-                  <button className="Modal__purchase">Purchase offset: {convertUSD(rec_cost_in_usd_cents + 25)}</button>
+                  <button className="Modal__purchase" onClick={this.props.openModal}>Purchase offset: {convertUSD(rec_cost_in_usd_cents + 25)}</button>
                   <button className="Modal__cancel" onClick={this.props.openModal}>Cancel</button>
                 </div>
           </ReactModal>
