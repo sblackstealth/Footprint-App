@@ -1,0 +1,19 @@
+.Navbar {
+  display: flex;
+  padding: 10px 175px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #233B3B;
+}
+
+.Navbar__brand {
+  color: white;
+  font-weight: 500;
+}
+
+.Navbar__link {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 1.2rem;
+}

@@ -9,13 +9,13 @@ class DataChart extends Component {
         labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Nov'],
         datasets: [
           {
-            label: 'PuE', 
+            label: 'PUE',
             backgroundColor: '#233B3B',
             data: [1.65, 1.75, 1.5, 1.65, 1.5, 1.5, 1.75, 1.75, 1.75, 1.65, 1.65],
             yAxisID: 'A'
           },
           {
-            label: 'Watt Hours', 
+            label: 'Watt Hours',
             backgroundColor: '#D18C29',
             data: [100800, 104904, 102960, 110856, 97920, 105648, 104160, 105840, 102672, 97920, 48240],
             yAxisID: 'B'
@@ -24,10 +24,10 @@ class DataChart extends Component {
       }
     }
   }
-  
+
   render() {
     return (
-      <div className="Data-chart" style={{ position:'relative',width:'800px'}}>
+      <div className="Data-chart" style={{ position:'relative',width:'49%'}}>
         <Bar
           data={this.state.chartData}
           options={{
