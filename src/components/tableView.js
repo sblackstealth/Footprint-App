@@ -33,7 +33,7 @@ function TableView() {
       }
     },
     {
-      Header: "Total Carbon Emissions (Mg)",
+      Header: "Total Carbon Emissions (kg)",
       accessor: "carbon_emissions",
       style: {
         textAlign: "right"

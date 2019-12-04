@@ -1,3 +1,4 @@
+import {wattHourConverter} from './utilities'
 const data = [
   {
     server_id: "ea0977e7-67af-424f-b661-710dd2beb79e",
@@ -7,7 +8,7 @@ const data = [
     watt_hours: 100800,
     pue: 1.65,
     carbon_offset: "Positive",
-    carbon_emissions: 6
+    carbon_emissions: wattHourConverter(100800) 
   },
   {
     server_id: "ea0977e7-67af-424f-b661-710dd2beb79e",
@@ -17,7 +18,7 @@ const data = [
     watt_hours: 104904,
     pue: 1.75,
     carbon_offset: "Positive",
-    carbon_emissions: 9
+    carbon_emissions: Math.floor(wattHourConverter(104904)) 
   },
   {
     server_id: "ea0977e7-67af-424f-b661-710dd2beb79e",
@@ -27,7 +28,7 @@ const data = [
     watt_hours: 102960,
     pue: 1.5,
     carbon_offset: "Positive",
-    carbon_emissions: 5
+    carbon_emissions: wattHourConverter(102960) 
   },
   {
     server_id: "ea0977e7-67af-424f-b661-710dd2beb79e",
@@ -37,7 +38,7 @@ const data = [
     watt_hours: 110856,
     pue: 1.65,
     carbon_offset: "Positive",
-    carbon_emissions: 4
+    carbon_emissions: Math.floor(wattHourConverter(110856))
   },
   {
     server_id: "ea0977e7-67af-424f-b661-710dd2beb79e",
@@ -47,7 +48,7 @@ const data = [
     watt_hours: 97920,
     pue: 1.5,
     carbon_offset: "Positive",
-    carbon_emissions: 6
+    carbon_emissions: wattHourConverter(97920)
   },
   {
     server_id: "ea0977e7-67af-424f-b661-710dd2beb79e",
@@ -57,7 +58,7 @@ const data = [
     watt_hours: 105648,
     pue: 1.5,
     carbon_offset: "Positive",
-    carbon_emissions: 9
+    carbon_emissions: Math.floor(wattHourConverter(105648))
   },
   {
     server_id: "ea0977e7-67af-424f-b661-710dd2beb79e",
@@ -67,7 +68,7 @@ const data = [
     watt_hours: 104160,
     pue: 1.75,
     carbon_offset: "Positive",
-    carbon_emissions: 1
+    carbon_emissions: wattHourConverter(104160) 
   },
   {
     server_id: "ea0977e7-67af-424f-b661-710dd2beb79e",
@@ -77,7 +78,7 @@ const data = [
     watt_hours: 105840,
     pue: 1.75,
     carbon_offset: "Positive",
-    carbon_emissions: 2
+    carbon_emissions: wattHourConverter(105840) 
   },
   {
     server_id: "ea0977e7-67af-424f-b661-710dd2beb79e",
@@ -87,7 +88,7 @@ const data = [
     watt_hours: 102672,
     pue: 1.75,
     carbon_offset: "Positive",
-    carbon_emissions: 6
+    carbon_emissions: Math.floor(wattHourConverter(102672))
   },
   {
     server_id: "ea0977e7-67af-424f-b661-710dd2beb79e",
@@ -97,7 +98,7 @@ const data = [
     watt_hours: 97920,
     pue: 1.65,
     carbon_offset: "Positive",
-    carbon_emissions: 3
+    carbon_emissions: wattHourConverter(97920)
   },
   {
     server_id: "ea0977e7-67af-424f-b661-710dd2beb79e",
@@ -107,7 +108,7 @@ const data = [
     watt_hours: 48240,
     pue: 1.65,
     carbon_offset: "Positive",
-    carbon_emissions: 7
+    carbon_emissions: wattHourConverter(48240) 
   }
 ];
 
