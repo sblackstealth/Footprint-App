@@ -48,11 +48,11 @@ class Modal extends Component {
               </div>
               <div className="Modal__offset">
                 <p>offset cost: {convertUSD(rec_cost_in_usd_cents)}</p>
-                <p>fee: {convertUSD(transaction_cost_in_usd_cents)}</p>
+                <p>fee: {convertUSD(25)}</p>
               </div>
             </div>
                 <div className="Modal__btns">
-                  <button className="Modal__purchase">Purchase offset: {convertUSD(total_cost_in_usd_cents)}</button>
+                  <button className="Modal__purchase">Purchase offset: {convertUSD(rec_cost_in_usd_cents + 25)}</button>
                   <button className="Modal__cancel" onClick={this.props.openModal}>Cancel</button>
                 </div>
           </ReactModal>

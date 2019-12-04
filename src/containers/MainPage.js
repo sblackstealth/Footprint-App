@@ -56,8 +56,8 @@ class MainPage extends Component {
     try {
       const response = await axios({
         method: 'post',
-        url: 'https://api.cloverly.com/2019-03-beta/purchases/electricity',
-        data: JSON.stringify({ energy: { value: 100800, units: 'kwh' } }),
+        url: 'https://api.cloverly.com/2019-03-beta/purchases/carbon',
+        data: JSON.stringify({ weight: { value: 100800, units: 'kg' } }),
         headers: {
           'Content-type': 'application/json',
           Authorization: 'Bearer public_key:47800ea0ee541b4c',
