@@ -1,12 +1,12 @@
 import React,{ Component } from 'react';
-import Slider from '../components/Slider'
-import Neutralizor from '.../Neutralizor.png';
-import Sustainilizer from '.../Sustainilizor.png';
+// import Slider from '../components/Slider'
+// import Neutralizor from '.../Neutralizor.png';
+// import Sustainilizer from '.../Sustainilizor.png';
 
-chooseBadge=(<Slider/>)=>{
-    let slider= <Slider/>
-    if{ slider.value >=124 return Neutralizor}else{ return Sustainilizer}
-}
+// chooseBadge=(<Slider/>)=>{
+//     let slider= <Slider/>
+//     if{ slider.value >=124 return Neutralizor}else{ return Sustainilizer}
+// }
 class RewardsBadge extends Component {
     render(){
         return(

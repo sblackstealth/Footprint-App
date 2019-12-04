@@ -4,7 +4,6 @@ const convertUSD = (amount) => {
 
 const wattHourConverter = (watt_hours)=>{
  let cloverlykilos= ((watt_hours*1.2)/ 2.25)
- console.log(cloverlykilos)
  return cloverlykilos
 }
 
