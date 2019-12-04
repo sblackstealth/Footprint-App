@@ -1,6 +1,6 @@
 import React,{ Component } from 'react';
 
-chooseBadge=(badge)=>{
+const chooseBadge=(badge)=>{
     return badge
 }
 class RewardsBadge extends Component {
@@ -18,4 +18,5 @@ class RewardsBadge extends Component {
         )
     }
 }
-export default RewardsBadge;
+export {RewardsBadge,
+chooseBadge};
