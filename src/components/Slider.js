@@ -15,17 +15,18 @@ import cn200 from '../assets/cn200.png';
 import './slider.css';
 import 'rc-slider/assets/index.css';
 
-const Slider = ({offsetPercentage, sliderOnAfterChange, sliderOnChange, currentMonth}) => {
-  // const [offsetPercentage, setOffsetPercentage] = useState(currentMonth.offset_amount === 0 ? 0 : currentMonth.carbon_emissions / currentMonth.offset_amount * 100);
+const Slider = ({sliderOnAfterChange, updateData, currentMonth}) => {
+  const [offsetPercentage, setOffsetPercentage] = useState(currentMonth.carbon_emissions === 0 ? 0 : Math.ceil(currentMonth.offset_amount / currentMonth.carbon_emissions * 100));
   const badges = [null, cn25, cn50, cn75, cn100, cn125, cn150, cn175, cn200];
-  // const offsetPercentage = currentMonth.offset_amount === 0 ? 0 : currentMonth.carbon_emissions / currentMonth.offset_amount * 100;
   const badge = badges[Math.ceil(offsetPercentage / 25)];
   const mark = <p className='Slider__mark'>{offsetPercentage}%</p>
 
-  // const calculate = () => {
-  //   currentMonth.offset_amount === 0 ? 0 : currentMonth.carbon_emissions / currentMonth.offset_amount * 100
-  // }
-  console.log('o', offsetPercentage);
+  const handleOffsetPercentage = amount => {
+    const offset_amount = Math.ceil((amount / 100) * currentMonth.carbon_emissions);
+    const offset = Math.ceil((offset_amount / currentMonth.carbon_emissions) * 100);
+    setOffsetPercentage(offset);
+    updateData(offset_amount);
+  }
 
   return (
     <div className={`Slider ${offsetPercentage}`}>
@@ -36,7 +37,7 @@ const Slider = ({offsetPercentage, sliderOnAfterChange, sliderOnChange, currentM
         marks={{ [offsetPercentage]: mark }}
         step={5}
         onAfterChange={sliderOnAfterChange}
-        onChange={sliderOnChange}
+        onChange={handleOffsetPercentage}
         handleStyle={{
           borderColor: 'black',
           backgroundColor: 'red',

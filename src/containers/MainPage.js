@@ -37,10 +37,6 @@ class MainPage extends Component {
     this.setState({ monthsChecked: positiveMonths })
   }
 
-  // updateSlider(id, amount) {
-
-  // }
-
   updateChecked(month) {
     const {carbon_emissions, offset_amount} =  this.state.data[month];
     const offsetPercentage = offset_amount === 0 ? 0 : carbon_emissions / offset_amount * 100;
@@ -51,7 +47,13 @@ class MainPage extends Component {
   // Checks to see if slider amount is increased. If so, cloverly handler is called.
   sliderOnAfterChange(amount) {
     if (amount > 0) {
-      this.cloverlyHandler(amount);
+      const { data, checked } = this.state;
+      const dataCopy = [...data];
+      const offset_amount = (amount / 100) * dataCopy[checked].carbon_emissions;
+      dataCopy[checked] = {...dataCopy[checked], offset_amount};
+      this.setState({ data: dataCopy });
+
+      this.cloverlyHandler(offset_amount);
       this.openModal();
     }
   }
@@ -63,20 +65,20 @@ class MainPage extends Component {
     this.setState({offsetMonth});
   }
 
-  updateData = (carbon_emissions) => {
+  updateData = (offset_amount) => {
     const { data, checked } = this.state;
     const dataCopy = [...data];
-    dataCopy[checked] = {...dataCopy[checked], carbon_emissions};
+    dataCopy[checked] = {...dataCopy[checked], offset_amount};
     this.setState({ data: dataCopy });
   }
 
   // Passes an amount in weight to the cloverly api
-  async cloverlyHandler() {
+  async cloverlyHandler(offset_amount) {
     try {
       const response = await axios({
         method: 'post',
         url: 'https://api.cloverly.com/2019-03-beta/purchases/electricity',
-        data: JSON.stringify({ energy: { value: 100800, units: 'kwh' } }),
+        data: JSON.stringify({ energy: { value: offset_amount, units: 'kwh' } }),
         headers: {
           'Content-type': 'application/json',
           Authorization: 'Bearer public_key:47800ea0ee541b4c',
@@ -95,8 +97,8 @@ class MainPage extends Component {
   }
 
   render() {
-    console.log('statteee', this.state);
     const { offsetPercentage } = this.state;
+    console.log('state', this.state)
     return (
       <div className="Main">
         <div className="Main__graphs">
@@ -119,7 +121,7 @@ class MainPage extends Component {
               <br />
               <Slider
                 sliderOnAfterChange={this.sliderOnAfterChange}
-                sliderOnChange={this.sliderOnChange}
+                updateData={this.updateData}
                 currentMonth={data[this.state.checked]}
               />
             </div>

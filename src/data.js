@@ -11,7 +11,7 @@ const data = [
     pue: 1.65,
     carbon_offset: 'Neutral',
     carbon_emissions: wattHourConverter(100800),
-    offset_amount: wattHourConverter(100800),
+    offset_amount: 0,
   },
   {
     name: 'February',
@@ -107,7 +107,7 @@ const data = [
     pue: 1.75,
     carbon_offset: 'Neutral',
     carbon_emissions: Math.floor(wattHourConverter(102672)),
-    offset_amount: Math.floor(wattHourConverter(102672)),
+    offset_amount: 0,
   },
   {
     name: 'October',

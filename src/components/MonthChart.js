@@ -21,7 +21,6 @@ const MonthChart = ({monthsChecked, isMonthPositive, updateChecked, checked }) =
 
 MonthChart.propTypes = {
   monthsChecked: PropTypes.array.isRequired,
-  isMonthChecked: PropTypes.func.isRequired
 };
 
 export default MonthChart;
