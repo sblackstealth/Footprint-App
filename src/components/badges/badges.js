@@ -1,19 +1,15 @@
 import React,{ Component } from 'react';
-// import Slider from '../components/Slider'
-// import Neutralizor from '.../Neutralizor.png';
-// import Sustainilizer from '.../Sustainilizor.png';
 
-// chooseBadge=(<Slider/>)=>{
-//     let slider= <Slider/>
-//     if{ slider.value >=124 return Neutralizor}else{ return Sustainilizer}
-// }
+chooseBadge=(badge)=>{
+    return badge
+}
 class RewardsBadge extends Component {
     render(){
         return(
             <div className="badgePage">
              <p>
                 Congratulations  
-                Thanks for being a Sustainilizor
+                Thanks for being a {chooseBadge()}
              </p>
                 
              <img src={chooseBadge()}></img>
