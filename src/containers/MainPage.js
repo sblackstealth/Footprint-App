@@ -25,7 +25,7 @@ class MainPage extends Component {
 
     this.openModal = this.openModal.bind(this);
     this.sliderOnAfterChange = this.sliderOnAfterChange.bind(this);
-    // this.sliderOnChange = this.sliderOnChange.bind(this);
+    this.updateData = this.updateData.bind(this);
     this.updateChecked = this.updateChecked.bind(this);
   }
 
@@ -65,7 +65,7 @@ class MainPage extends Component {
     this.setState({offsetMonth});
   }
 
-  updateData = (offset_amount) => {
+  updateData(offset_amount){
     const { data, checked } = this.state;
     const dataCopy = [...data];
     dataCopy[checked] = {...dataCopy[checked], offset_amount};
