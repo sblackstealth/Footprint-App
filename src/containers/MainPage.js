@@ -38,10 +38,10 @@ class MainPage extends Component {
   }
 
   updateChecked(month) {
-    const {carbon_emissions, offset_amount} =  this.state.data[month];
+    const { carbon_emissions, offset_amount } = this.state.data[month];
     const offsetPercentage = offset_amount === 0 ? 0 : carbon_emissions / offset_amount * 100;
 
-    this.setState({ checked: month , offsetPercentage });
+    this.setState({ checked: month, offsetPercentage });
   }
 
   // Checks to see if slider amount is increased. If so, cloverly handler is called.
@@ -50,7 +50,7 @@ class MainPage extends Component {
       const { data, checked } = this.state;
       const dataCopy = [...data];
       const offset_amount = (amount / 100) * dataCopy[checked].carbon_emissions;
-      dataCopy[checked] = {...dataCopy[checked], offset_amount};
+      dataCopy[checked] = { ...dataCopy[checked], offset_amount };
       this.setState({ data: dataCopy });
 
       this.cloverlyHandler(offset_amount);
@@ -61,14 +61,14 @@ class MainPage extends Component {
   sliderOnChange(amount) {
     const { data, checked } = this.state;
     const offset_amount = Math.ceil((amount / 100) * data[checked].carbon_emissions);
-    const offsetMonth = {...data[checked], offset_amount };
-    this.setState({offsetMonth});
+    const offsetMonth = { ...data[checked], offset_amount };
+    this.setState({ offsetMonth });
   }
 
-  updateData(offset_amount){
+  updateData(offset_amount) {
     const { data, checked } = this.state;
     const dataCopy = [...data];
-    dataCopy[checked] = {...dataCopy[checked], offset_amount};
+    dataCopy[checked] = { ...dataCopy[checked], offset_amount };
     this.setState({ data: dataCopy });
   }
 
@@ -97,16 +97,14 @@ class MainPage extends Component {
   }
 
   render() {
-  
-    console.log('state', this.state)
     return (
       <div className="Main">
         <div className="Main__graphs">
-        <h3 className="Main__stats">Carbon Statistics</h3>
-        <div className="Main__getitdone">
-          <TableView tableData={this.state.data} />
-          <DataChart chartData={this.state.data} />
-        </div>
+          <h3 className="Main__stats">Carbon Statistics</h3>
+          <div className="Main__getitdone">
+            <TableView tableData={this.state.data} />
+            <DataChart chartData={this.state.data} />
+          </div>
         </div>
         <div className="Main__carbon-info">
           <div className="Main__months">
