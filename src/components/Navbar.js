@@ -9,7 +9,7 @@ const Navbar = () => {
     <nav className="Navbar">
       <h1 className="Navbar__brand">FootPrints</h1>
 
-      <img src={logo} alt="Footprints logo" style={{ width: '30px'}} />
+      <img src={logo} alt="Footprints logo" style={{ width: '30px' }} />
 
       <div>
         <Link className="Navbar__link" to="/">Home</Link>

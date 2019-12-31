@@ -8,7 +8,7 @@ class DataChart extends Component {
     super(props);
     this.state = {
       chartData: {
-        labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov'],
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'],
         datasets: [
           {
             label: 'Carbon Emissions',
@@ -27,7 +27,7 @@ class DataChart extends Component {
 
   render() {
     return (
-      <div className="Data-chart" style={{ position:'relative',width:'49%'}}>
+      <div className="Data-chart" style={{ position: 'relative', width: '49%' }}>
         <Bar
           data={this.state.chartData}
           options={{
