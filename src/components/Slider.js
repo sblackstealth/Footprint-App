@@ -55,10 +55,9 @@ const Slider = ({sliderOnAfterChange, updateData, currentMonth}) => {
 };
 
 Slider.propTypes = {
-  offsetPercentage: PropTypes.number,
-  sliderOnChange: PropTypes.func,
   sliderOnAfterChange: PropTypes.func,
-  currentMonth: PropTypes.number
+  currentMonth: PropTypes.number,
+  updateData: PropTypes.func
 };
 
 export default Slider;
