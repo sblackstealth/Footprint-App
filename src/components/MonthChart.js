@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './monthchart.css';
 
-const MonthChart = ({monthsChecked, isMonthPositive, updateChecked, checked }) => {
+const MonthChart = ({monthsChecked, updateChecked, checked }) => {
   return (
     <div className="Main__month-chart2">
       {monthsChecked.map(
