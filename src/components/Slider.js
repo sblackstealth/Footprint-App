@@ -15,7 +15,7 @@ import cn200 from '../assets/cn200.png';
 import './slider.css';
 import 'rc-slider/assets/index.css';
 
-const Slider = ({sliderOnAfterChange, updateData, currentMonth}) => {
+const Slider = ({ sliderOnAfterChange, updateData, currentMonth }) => {
   const [offsetPercentage, setOffsetPercentage] = useState(currentMonth.carbon_emissions === 0 ? 0 : Math.ceil(currentMonth.offset_amount / currentMonth.carbon_emissions * 100));
   const badges = [null, cn25, cn50, cn75, cn100, cn125, cn150, cn175, cn200];
   const badge = badges[Math.ceil(offsetPercentage / 25)];
@@ -42,22 +42,22 @@ const Slider = ({sliderOnAfterChange, updateData, currentMonth}) => {
           borderColor: 'black',
           backgroundColor: 'red',
         }}
-        handle={ (handleProps) => {
-        return (
-          <Handle { ...handleProps }>
-            <img className='Slider__img' src={badge} alt='' />
-          </Handle>
-        )
-    }}
+        handle={(handleProps) => {
+          return (
+            <Handle {...handleProps}>
+              <img className='Slider__img' src={badge} alt='' />
+            </Handle>
+          )
+        }}
       />
     </div>
   );
 };
 
 Slider.propTypes = {
-  sliderOnAfterChange: PropTypes.func,
-  currentMonth: PropTypes.number,
-  updateData: PropTypes.func
+  sliderOnAfterChange: PropTypes.func.isRequired,
+  currentMonth: PropTypes.number.isRequired,
+  updateData: PropTypes.func.isRequired
 };
 
 export default Slider;
